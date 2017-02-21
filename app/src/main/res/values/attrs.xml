@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ChangeableTextView">
+        <attr name="openAnim" format="boolean"></attr>
+        <attr name="minLines" format="integer"/>
+        <attr name="animBackgroundColor" format="color"/>
+        <attr name="duration" format="integer"/>
+        <attr name="maskword" format="string"/>
+        <attr name="replacetext" format="string"/>
+    </declare-styleable>
+</resources>
