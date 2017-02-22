@@ -9,10 +9,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
     <lx.changeabletextview.ChangeableTextView
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
         app:openAnim="true"
-        app:minLines="5"
+        app:minLines="4"
         app:maskword="色"
         app:replacetext="【bi~】"
         android:layout_width="match_parent"

@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }).setTextSize(34);
             }
-        },2000);
+        },10000);
 
     }
 }

@@ -70,7 +70,7 @@ public class ChangeableTextView extends TextView {
     private boolean isOpenAnim;
     private int values;
     //duration
-    private int mDuration = 1300;
+    private int mDuration = 1100;
     private String[] mMaskword;
     private String mReplacetext;
     //是否开启了正则屏蔽 或者 高亮
@@ -139,7 +139,7 @@ public class ChangeableTextView extends TextView {
     }
     private void startAnim(){
         if(isOpenAnim){
-            final ValueAnimator valueAnimator = ValueAnimator.ofInt(0,mWidth/2,0);
+            final ValueAnimator valueAnimator = ValueAnimator.ofInt(0,(int)(mWidth*0.6f),0);
             valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
@@ -268,9 +268,14 @@ public class ChangeableTextView extends TextView {
         mPath.reset();
         if(isOpenAnim){
             for (int i = 0; i < lines; i++) {
-                int lineWidth = (i==lines-1?mWidth/2:mWidth);
-                int lastValue = (i==lines-1?values/2:values);
-                int updateValue = i%2==0?lineWidth/2+lastValue:lineWidth-lastValue;
+                int updateValue = 0;
+                if(i == 0){
+                   updateValue = (int)(mWidth*0.75f);
+                }else{
+                    int lineWidth = (i==lines-1?mWidth/2:mWidth);
+                    int lastValue = (i==lines-1?values/2:values);
+                    updateValue = i%2==0?lineWidth/2+lastValue:lineWidth-lastValue;
+                }
                 mPath.addRect(0,mLineHeight*i+mLineSpacingExtra*i,updateValue,mLineHeight*(i+1)+mLineSpacingExtra*i, Path.Direction.CW);
             }
             canvas.drawPath(mPath,mPaint);
